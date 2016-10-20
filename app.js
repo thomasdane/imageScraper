@@ -17,10 +17,12 @@ request(options, function(error, response, body){
 		s3bucket.putObject({
 			Body: body, 
 			Key: 'seabreeze', 
-			Bucket: 'partywave-images'
+			Bucket: 'partywave-images',
+			ContentType: 'image/png',
+			ACL: 'public-read'
 		}, function(error, data){
 			if (error) {
-				console.log("error saving image to S3");
+				console.log("error saving image to S3", error);
 			} else {
 				console.log("success uploading image")
 			}
