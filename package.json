@@ -2,13 +2,14 @@
   "name": "imagescraper",
   "version": "1.0.0",
   "description": "",
-  "main": "helloWorld.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "aws-sdk": "^2.6.10"
+    "aws-sdk": "^2.6.10",
+    "request": "^2.75.0"
   }
 }
