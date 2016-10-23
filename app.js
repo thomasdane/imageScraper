@@ -6,8 +6,8 @@ var scrapeImage = function(context) {
 	AWS.config.loadFromPath('config.json');
 	var s3bucket = new AWS.S3({params: {Bucket: 'partywave-images'}});
 	var options = {
-		uri: 'http://i.imgur.com/0cIbmeM.png', //not to spam while testing
-		//uri: 'http://res3.seabreeze.com.au/images/forecast/2/syd1/grg.png', 
+		//uri: 'http://i.imgur.com/0cIbmeM.png', //not to spam while testing
+		uri: 'http://res3.seabreeze.com.au/images/forecast/2/syd1/grg.png', 
 		encoding: null
 	}
 
@@ -25,7 +25,7 @@ var scrapeImage = function(context) {
 				if (error) {
 					console.log("error saving image to S3", error);
 				} else {
-					context.done(null, "success uploading image");					
+					context.done(null, "success uploading image at " + new Date());					
 				}
 			});
 		}
